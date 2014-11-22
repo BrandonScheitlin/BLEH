@@ -12,11 +12,12 @@ const int MAXCAPACITY = 83;
 int main()
 {
     //Data Abstraction
-    double radius = 0, sum = 0;
+    double sum = 0, percent, redCount = 0;
     double aRadius[MAXCAPACITY];
-    int Rcount = 0, count = 0, Vcount;
-    string color, ifName;
+    int radiusCount = 0, count = 0, Vcount = 0, i = 0;
+    string color, ifName, getlines;
     ifstream file;
+    Sphere classes;
 
     //Input
     do
@@ -30,28 +31,30 @@ int main()
         }
     }while(!file);
     //Process
+    getline(file, getlines);
+    getline(file, getlines);
+    
     cout << "Number " << "Radius " << "Color " << "Area "  << "Volume" << endl;
-    while(file >> radius >> color)
+    while(file >> aRadius[i] >> color)
     {
-        Sphere.setColor(color);
-        for(int i = MAXCAPACITY; i < MAXCAPACITY - i; i--)
+        classes.setColor(color);
+        RadiusCount++;
+        cout << RadiusCount << " " << aRadius[i];
+        i++;
+        cout << " " << color << " " << classes.area() << " " << classes.volume() << endl;
+        if (color == "red")
         {
-            aRadius[MAXCAPACITY - i] = radius;
-            cout << ++count << " " << radius << " " << color << Sphere.area()
-                 << Sphere.volume() << endl;
+            redCount++;
         }
-        if (Sphere.getColor() == "red")
+        if (classes.volume() >= 215)
         {
-            Rcount++;
+            Vcount++
         }
-        if (Sphere.volume() >= 215)
-        {
-            Vcount++;
-        }
-        sum += Sphere.area();
+        sum += classes.area();
     }
+    percent = redCount / count * 100;
     cout << "Total Number of Spheres = " << count << endl;
-    cout << Rcount << "% of Spheres are red" << endl;
+    cout << percent << " % of Spheres are red" << endl;
     cout << Vcount << "Spheres have a Volume over 215." << endl;
     cout << "Average Area = " << sum / count << endl;
 
