@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1416007001 source:c:\users\brand_000\documents\program 13\sphere.cpp
+	"Sphere.h"
+
+1416003977 c:\users\brand_000\documents\program 13\sphere.h
+	<iostream>
+	<string>
+	<iomanip>
+	<cmath>
+
